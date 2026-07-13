@@ -1,0 +1,22 @@
+# ===== 환자 개인정보(PHI) - 절대 커밋 금지 =====
+*.xls
+*.xlsx
+*.csv
+진단명.txt
+_verify*.png
+*.png
+
+# ===== 빌드 부산물 =====
+build/
+dist/
+*.spec
+__pycache__/
+*.pyc
+
+# ===== 사이트 다운로드 3rd-party JS =====
+_js/
+
+# ===== 기타 =====
+.venv/
+venv/
+*.log
