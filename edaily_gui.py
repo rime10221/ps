@@ -7,6 +7,7 @@ E-daily 입원(step=2) 자동화 GUI
 저장은 사용자가 브라우저에서 직접 확인 후 누름.
 """
 import os
+import sys
 import queue
 import threading
 import tkinter as tk
@@ -14,7 +15,11 @@ from tkinter import ttk, filedialog, messagebox
 
 import edaily_core as core
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# exe(PyInstaller onefile)로 실행 시엔 exe가 있는 폴더, 스크립트 실행 시엔 소스 폴더
+if getattr(sys, "frozen", False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_XLS = os.path.join(BASE_DIR, "입원목록.xls")
 DEFAULT_ER = os.path.join(BASE_DIR, "ER.xls")
 DEBUG_PORT = 9222
